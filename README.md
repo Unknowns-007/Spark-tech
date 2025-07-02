@@ -1,12 +1,42 @@
-# React + Vite
+# ⚡ Spark Tech — Digital Marketing Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official website project for **Spark Tech**, a modern digital marketing company that combines creativity, data, and technology to deliver impactful online experiences. This project is currently in development and crafted using **React JS** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚧 Status
 
-## Expanding the ESLint configuration
+🚀 _Currently under development — stay tuned for updates!_
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features (Planned & Implemented)
+
+- 🎯 Sleek, modern landing page for a digital marketing brand
+- 🌈 Fully responsive design for mobile, tablet, and desktop
+- ⚛️ Built using React with component-based architecture
+- 🎨 Tailwind CSS for clean, utility-first styling
+- 📞 Contact section for client communication
+- 📌 Sections for services, about, testimonials, and more
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech       | Description                              |
+|------------|------------------------------------------|
+| ⚛️ React   | JavaScript library for building UI       |
+| 🎨 Tailwind CSS | Utility-first CSS framework        |
+| ⚡ Vite     | Build tool & development server          |
+
+---
+
+## 📦 Getting Started
+
+To run this project locally:
+
+```bash
+git clone https://github.com/yourusername/spark-tech.git
+cd spark-tech
+npm install
+npm run dev
