@@ -1,10 +1,10 @@
 import React from "react"
 import { Navbar } from "./components/Navbar"
-import Hero from "./components/hero"
+import Hero from "./components/Hero"
 
 function App() {
    return (
-    <div>
+    <div className='overflow-hidden'>
       <Navbar/>
       <Hero/>
     </div>
