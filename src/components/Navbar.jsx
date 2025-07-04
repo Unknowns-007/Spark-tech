@@ -4,11 +4,11 @@ import { useState } from 'react'
 export const Navbar = () => {
     const [active, setActive] = useState('home');
 
-  const menuItems = ['home', 'services', 'projects',  'about', 'reviews'];
+  const menuItems = ['home', 'services', 'projects',  'about', 'Blogs'];
 
   return (
     
-       <div className='bg-black h-[80px] w-full pt-[10px]'>
+       <div className='bg-black h-[80px] w-full pt-[10px] relative z-50'>
       <div className='h-[60px] w-[650px] border-[#c8c8c8] border rounded-4xl  fixed top-0 left-0 ml-[400px] mt-[20px]  flex items-center bg-black font-[Inter] text-sm md:text-base tracking-wide'>
       <ul className='flex justify-evenly items-center w-full h-full'>
         {menuItems.map((item) => (

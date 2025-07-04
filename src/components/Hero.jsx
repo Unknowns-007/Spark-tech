@@ -1,5 +1,8 @@
+import React from "react";
+import Photo from "../assets/Photo.png" 
 const Hero = () => {
   return (
+    <>
     <section className="text-white bg-black min-h-screen flex items-center justify-center px-4">
       <div className="text-center">
         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
@@ -15,9 +18,14 @@ const Hero = () => {
     →
   </span>
 </button>
-
       </div>
     </section>
+   <div className="relative">
+  <img src={Photo} alt="Hero" className="w-full h-auto object-cover" />
+  <div className="absolute top-0 left-0 w-full h-24  bg-gradient-to-b from-black/80 to-transparent"></div>
+</div>
+    </>
+    
   );
 };
 
