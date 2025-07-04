@@ -2,7 +2,7 @@ import React from "react"
 import { Navbar } from "./components/Navbar"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
-import FAQ from "./components/FAQ"
+import Faq from "./components/Faq"
 
 function App() {
    return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Services/>
-       <FAQ/>
+       <Faq/>
     </div>
   )
 }
