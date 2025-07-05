@@ -11,8 +11,8 @@ function App() {
       <Navbar/>
       <Hero/>
       <Services/>
-      <ContactForm/>
        <Faq/>
+      <ContactForm/>
     </div>
   )
 }
