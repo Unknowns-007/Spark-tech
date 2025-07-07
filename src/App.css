@@ -40,3 +40,42 @@
 .read-the-docs {
   color: #888;
 }
+.cursor-video:hover {
+  cursor: url('https://cdn-icons-png.flaticon.com/128/2875/2875433.png') 0 0, pointer;
+}
+
+
+.cursor-seo:hover {
+  cursor: url('/mouse/seo.svg') 0 0, auto;
+}
+
+.cursor-pen:hover {
+  cursor: url('/mouse/pen.svg') 0 0, auto;
+}
+
+.cursor-dev:hover {
+  cursor: url('/mouse/dev.svg') 0 0, auto;
+}
+
+.cursor-social:hover {
+  cursor: url('/mouse/insta.svg') 0 0, auto;
+}
+
+.cursor-mail:hover {
+  cursor: url('/mouse/mail.svg') 0 0, auto;
+}
+
+.cursor-person:hover {
+  cursor: url('/mouse/person.svg') 0 0, auto;
+}
+
+.cursor-brand:hover {
+  cursor: url('/mouse/brand.svg') 0 0, auto;
+}
+
+.cursor-graph:hover {
+  cursor: url('/mouse/graph.svg') 0 0, auto;
+}
+
+
+
