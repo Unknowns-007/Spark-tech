@@ -6,17 +6,22 @@ export const ContactForm = () => {
     email: "",
     message: "",
   });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    const subject = encodeURIComponent(
+      `Contact Form Submission from ${formData.name}`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+    );
+    const mailtoLink = `mailto:sparktechbizsol@gmail.com?subject=${subject}&body=${body}`;
+
+    window.open(mailtoLink, "_self");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
   };
 
   return (
@@ -35,13 +40,10 @@ export const ContactForm = () => {
 
           <div className="bg-white/5 backdrop-blur-md rounded-[30px] p-6 sm:p-10 w-full max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-5">
-              
               <div className="space-y-2">
                 <label
                   className="text-xs font-medium text-[#888]"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                  }}
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Name
                 </label>
@@ -49,7 +51,9 @@ export const ContactForm = () => {
                   type="text"
                   name="name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="w-full px-4 py-4 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400"
                   style={{ fontFamily: "Inter" }}
                 />
@@ -58,9 +62,7 @@ export const ContactForm = () => {
               <div className="space-y-2">
                 <label
                   className="text-xs font-medium text-[#888]"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                  }}
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Email
                 </label>
@@ -68,26 +70,27 @@ export const ContactForm = () => {
                   type="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="w-full px-4 py-4 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400"
                   style={{ fontFamily: "Inter" }}
                 />
               </div>
 
-
               <div className="space-y-2">
                 <label
                   className="text-xs font-medium text-[#888]"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                  }}
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Message
                 </label>
                 <textarea
                   name="message"
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   rows={4}
                   placeholder="Write your message"
                   className="w-full px-4 py-3 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400 resize-none"
@@ -100,11 +103,17 @@ export const ContactForm = () => {
                 className="w-full py-3 bg-[#F58327] rounded-[10px] text-[#0A0A0A] text-base font-semibold hover:bg-[#e6751f] transition-all duration-200"
                 style={{
                   fontFamily: 'Unbounded, "Unbounded Placeholder", sans-serif',
-                  fontWeight:400
+                  fontWeight: 400,
                 }}
               >
                 Submit
               </button>
+
+              {showToast && (
+                <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-[10px] text-green-400 text-sm font-medium text-center transition-all duration-300">
+                  Our team will contact you!
+                </div>
+              )}
             </form>
           </div>
         </div>
