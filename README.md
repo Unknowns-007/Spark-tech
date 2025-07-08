@@ -43,7 +43,7 @@ The website is being built to represent Spark Tech's online presence, highlight 
 ## 📬 Contact
 
 Have any suggestions or questions?  
-Reach out to the team at: **sparktechdm@gmail.com**
+Reach out to the team at: **vignesh2262006@gmail.com**
 
 ---
 
