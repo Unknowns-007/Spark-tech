@@ -1,92 +1,115 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const ProjectsSection = () => {
+  const containerRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+  const ticking = useRef(false);
+
+  const projects = [
+    {
+      title: "Marcuss Kellii Website",
+      description: "A fashion e-commerce site built with React and Firebase.",
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      rating: "★★★★★",
+      traffic: "80%",
+      client: "Marcus",
+    },
+    {
+      title: "SparkTech Marketing",
+      description: "A sleek digital presence for SparkTech using React + Tailwind.",
+      image: "https://images.unsplash.com/photo-1604210740327-dfd2dc1b2dc8?auto=format&fit=crop&w=800&q=80",
+      rating: "★★★★☆",
+      traffic: "65%",
+      client: "Sanjay Kumar",
+    },
+    {
+      title: "PECTeam2K25 Conference",
+      description: "Official conference portal with registration and schedule.",
+      image: "https://images.unsplash.com/photo-1522199873713-4f1117c1a9f8?auto=format&fit=crop&w=800&q=80",
+      rating: "★★★★★",
+      traffic: "90%",
+      client: "Panimalar College",
+    },
+  ];
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const updateScroll = () => {
+      const scrollTop = container.scrollTop;
+      setScrollY(scrollTop);
+      ticking.current = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(updateScroll);
+        ticking.current = true;
+      }
+    };
+
+    container.addEventListener('scroll', onScroll);
+    return () => container.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <div className="bg-black text-white min-h-screen font-[Inter] pt-[60px] px-6">
-      {/* Main heading */}
-      <div className="text-center mt-24">
-        <h1 className="text-5xl font-extrabold tracking-tight leading-tight mb-10">
-          Check Our Works With<br />Real Results
-        </h1>
-      </div>
+    <div
+  ref={containerRef}
+  className="h-screen w-screen overflow-y-scroll overflow-x-hidden bg-black text-white font-[Inter] relative pt-28"
+>
 
-      {/* Project Card */}
-      <div className="max-w-6xl mx-auto mt-8 bg-[#1e1e1e] rounded-3xl overflow-hidden shadow-lg grid md:grid-cols-2 grid-cols-1">
-        {/* Left Image */}
-        <div className="flex items-center justify-center p-6 bg-[#ffb03b]">
-          <img
-            src="https://images.unsplash.com/photo-1614282300047-846f3f84c826?auto=format&fit=crop&w=300&h=300&q=80"
-            alt="Client"
-            className="rounded-2xl object-cover h-[280px] w-[280px]"
-          />
+      {/* Fake scroll area */}
+      <div style={{ height: `${projects.length * 100}vh` }} />
+
+      {/* Fixed layout container */}
+      <div className="fixed top-[60%] sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4 md:px-12 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto pointer-events-none">
+
+        
+        {/* Text Block */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+            Check Our Works<br />With Real Results
+          </h1>
+          <p className="text-gray-400 text-sm sm:text-base max-w-md mx-auto md:mx-0">
+            Each project we deliver is proof of our ability to bring real outcomes. Scroll through our success stories, one card at a time.
+          </p>
         </div>
 
-        {/* Right Content */}
-        <div className="p-8 flex flex-col justify-between">
-          <div>
-            <span className="bg-[#333] text-orange-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block">
-              PROJECTS
-            </span>
-            <h3 className="text-2xl font-bold mb-2">Project 1</h3>
-            <p className="text-gray-400 text-sm mb-6">
-              details about the project
-            </p>
-          </div>
+        {/* Card Stack */}
+        <div className="relative w-[90vw] sm:w-[340px] md:w-[400px] h-[500px] sm:h-[540px]">
+          {projects.map((project, index) => {
+            const progress = scrollY / (window.innerHeight * 0.7);
+            const visible = index <= progress;
+            const offset = visible ? (index - progress) * 14 : 1000;
 
-          {/* Stats */}
-          <div className="flex gap-6">
-            {/* Left Stat */}
-            <div>
-              <h4 className="text-3xl font-extrabold text-orange-500">60%</h4>
-              <p className="text-sm text-gray-400">Increase in website traffic</p>
-              <p className="text-xs text-gray-500 mt-1">Client: John Doe</p>
-            </div>
-
-            {/* Right Stat */}
-            <div>
-              <h4 className="text-3xl font-extrabold text-orange-500">★★★★★</h4>
-              <p className="text-sm text-gray-400">Client Rating</p>
-            </div>
-          </div>
-        </div>
-      </div>
-       <div className="max-w-6xl mx-auto mt-8 bg-[#1e1e1e] rounded-3xl overflow-hidden shadow-lg grid md:grid-cols-2 grid-cols-1">
-        {/* Left Image */}
-        <div className="flex items-center justify-center p-6 bg-[#ffb03b]">
-          <img
-            src="https://images.unsplash.com/photo-1614282300047-846f3f84c826?auto=format&fit=crop&w=300&h=300&q=80"
-            alt="Client"
-            className="rounded-2xl object-cover h-[280px] w-[280px]"
-          />
-        </div>
-
-        {/* Right Content */}
-        <div className="p-8 flex flex-col justify-between">
-          <div>
-            <span className="bg-[#333] text-orange-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block">
-              PROJECTS
-            </span>
-            <h3 className="text-2xl font-bold mb-2">Project 1</h3>
-            <p className="text-gray-400 text-sm mb-6">
-              details about the project
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="flex gap-6">
-            {/* Left Stat */}
-            <div>
-              <h4 className="text-3xl font-extrabold text-orange-500">60%</h4>
-              <p className="text-sm text-gray-400">Increase in website traffic</p>
-              <p className="text-xs text-gray-500 mt-1">Client: John Doe</p>
-            </div>
-
-            {/* Right Stat */}
-            <div>
-              <h4 className="text-3xl font-extrabold text-orange-500">★★★★★</h4>
-              <p className="text-sm text-gray-400">Client Rating</p>
-            </div>
-          </div>
+            return (
+              <div
+                key={index}
+                className="absolute w-full h-full bg-[#1e1e1e] rounded-3xl shadow-2xl p-5 flex flex-col justify-between rotate-3 transition-transform duration-300 ease-out"
+                style={{
+                  transform: `translateY(${offset}px)`,
+                  zIndex: index,
+                  opacity: visible ? 1 : 0,
+                  willChange: 'transform, opacity',
+                }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-xl h-[200px] sm:h-[240px] w-full object-cover"
+                />
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold mt-4">{project.title}</h3>
+                  <p className="text-gray-400 text-sm mt-2">{project.description}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-orange-400 font-semibold mt-2">{project.rating}</p>
+                  <p className="text-xs text-gray-500">Traffic Boost: {project.traffic}</p>
+                  <p className="text-xs text-gray-500">Client: {project.client}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

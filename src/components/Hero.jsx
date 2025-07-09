@@ -20,10 +20,15 @@ const Hero = () => {
 </button>
       </div>
     </section>
-   <div className="relative">
-  <img src={Photo} alt="Hero" className="w-full h-auto object-cover" />
-  <div className="absolute top-0 left-0 w-full h-24  bg-gradient-to-b from-black/80 to-transparent"></div>
+<div className="relative">
+  <img
+    src={Photo}
+    alt="Hero"
+    className="w-full h-[300px] md:h-auto object-cover"
+  />
+  <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/80 to-transparent"></div>
 </div>
+
     </>
     
   );

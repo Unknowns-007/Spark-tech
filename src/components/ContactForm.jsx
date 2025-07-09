@@ -6,152 +6,114 @@ export const ContactForm = () => {
     email: "",
     message: "",
   });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    const subject = encodeURIComponent(
+      `Contact Form Submission from ${formData.name}`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+    );
+    const mailtoLink = `mailto:sparktechbizsol@gmail.com?subject=${subject}&body=${body}`;
+
+    window.open(mailtoLink, "_self");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
   };
 
   return (
-    <section className="w-screen min-h-screen bg-black py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center px-[63px] ml-[55px]">
-          <div className="space-y-8">
+    <section className="w-full min-h-screen bg-black py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-left space-y-6">
             <h2
-              className="text-white text-[200px] font-normal leading-[150px] tracking-tight"
+              className="text-white text-[56px] sm:text-[80px] md:text-[120px] lg:text-[150px] xl:text-[170px] font-normal leading-[1] tracking-tight"
               style={{ fontFamily: "Unbounded" }}
             >
-              <span
-                className="text-white"
-                style={{ width: "886px", height: "204px" }}
-              >
-                Let's
-              </span>
-              <br />
-              <span
-                className="text-[#F58327]"
-                style={{ width: "886px", height: "204px", paddingLeft: "2px" }}
-              >
-                Talk!
-              </span>
+              <span className="block text-white">Let's</span>
+              <span className="block text-[#F58327] pl-1">Talk!</span>
             </h2>
           </div>
 
-          <div
-            className="bg-white/5 rounded-[30px] p-10"
-            style={{ marginLeft: "-70px", height: "520px",width: "720px" }}
-          >
+          <div className="bg-white/5 backdrop-blur-md rounded-[30px] p-6 sm:p-10 w-full max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <label
-                  className="block"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    lineHeight: "14px",
-                    color: "rgb(136, 136, 136)",
-                  }}
+                  className="text-xs font-medium text-[#888]"
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Name
                 </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="px-3 py-4 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-gray-400 text-sm placeholder-gray-400"
-                    style={{
-                      fontFamily: "Inter",
-                      width: "650px",
-                      height: "60px",
-                      marginTop: "10px",
-                    }}
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="w-full px-4 py-4 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400"
+                  style={{ fontFamily: "Inter" }}
+                />
               </div>
 
               <div className="space-y-2">
                 <label
-                  className="text-[#888] text-xs font-medium"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    lineHeight: "14px",
-                    color: "rgb(136, 136, 136)",
-                  }}
+                  className="text-xs font-medium text-[#888]"
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Email
                 </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="px-3 py-4 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-gray-400 text-sm placeholder-gray-400"
-                    style={{
-                      fontFamily: "Inter",
-                      width: "650px",
-                      height: "60px",
-                      marginTop: "10px",
-                    }}
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="w-full px-4 py-4 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400"
+                  style={{ fontFamily: "Inter" }}
+                />
               </div>
 
               <div className="space-y-2">
                 <label
-                  className="text-[#888] text-xs font-medium"
-                  style={{
-                    fontFamily: 'Inter, "Inter Placeholder", sans-serif',
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    lineHeight: "14px",
-                    color: "rgb(136, 136, 136)",
-                  }}
+                  className="text-xs font-medium text-[#888]"
+                  style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif' }}
                 >
                   Message
                 </label>
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Write your message"
-                    rows={4}
-                    className="px-3 py-3 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-gray-400 text-sm placeholder-gray-400 resize-none"
-                    style={{
-                      fontFamily: "Inter",
-                      width: "650px",
-                      height: "127px",
-                      marginTop: "10px",
-                    }}
-                  />
-                </div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  rows={4}
+                  placeholder="Write your message"
+                  className="w-full px-4 py-3 m-2 bg-gray-500/15 border border-gray-500/10 rounded-[20px] text-sm text-gray-300 placeholder-gray-400 resize-none"
+                  style={{ fontFamily: "Inter" }}
+                />
               </div>
 
               <button
                 type="submit"
-                className="py-2 bg-[#F58327] rounded-[10px] text-[#0A0A0A] text-base font-normal transition-all duration-200 hover:bg-[#e6751f]"
+                className="w-full py-3 bg-[#F58327] rounded-[10px] text-[#0A0A0A] text-base font-semibold hover:bg-[#e6751f] transition-all duration-200"
                 style={{
-                  fontFamily: "Unbounded",
-                  width: "650px",
-                  height: "40px",
-                  fontWeight: 700,
+                  fontFamily: 'Unbounded, "Unbounded Placeholder", sans-serif',
+                  fontWeight: 400,
                 }}
               >
                 Submit
               </button>
+
+              {showToast && (
+                <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-[10px] text-green-400 text-sm font-medium text-center transition-all duration-300">
+                  Our team will contact you!
+                </div>
+              )}
             </form>
           </div>
         </div>

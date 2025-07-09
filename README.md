@@ -1,12 +1,56 @@
-# React + Vite
+# 🚀 Spark Tech Digital Marketing — Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official repository for the **Spark Tech Digital Marketing** company website!  
+This project is currently under active development and aims to deliver a modern, responsive, and engaging web experience to showcase Spark Tech's digital marketing services and portfolio.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Project Overview
 
-## Expanding the ESLint configuration
+The website is being built to represent Spark Tech's online presence, highlight its services, and attract clients in the digital marketing space. It will include:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📈 Service descriptions and benefits  
+- 📱 Responsive design for all devices  
+- 💬 Contact and inquiry forms  
+- 🧑‍💻 Team introduction and testimonials  
+- 📰 Blog or insights section (planned)
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech           | Purpose                         |
+|----------------|----------------------------------|
+| HTML5 / CSS3   | Structure & styling              |
+| JavaScript     | Interactive features             |
+| React JS       | Front-end framework              |
+| Vite           | Project bundler for development  |
+| Git & GitHub   | Version control & collaboration  |
+
+---
+
+
+---
+
+## 👥 Contributors
+
+- **Vignesh R**
+- **Irayanbu**
+- **Sanjay**
+
+---
+
+## 📬 Contact
+
+Have any suggestions or questions?  
+Reach out to the team at: **vignesh2262006@gmail.com**
+
+---
+
+## 📌 License
+
+This project is for educational and business representation purposes. License will be added upon final deployment.
+
+---
+
+> ⭐ Stay tuned! We're building something exciting.
