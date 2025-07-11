@@ -1,16 +1,14 @@
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useState } from "react";
 import bannerImg from "../assets/banner.jpg"; // your banner image
 
 const About = () => {
   const [isMissionOpen, setIsMissionOpen] = useState(false);
   const [isVisionOpen, setIsVisionOpen] = useState(false);
-  const [clickedIndex, setClickedIndex] = useState(null);
 
   return (
     <div className="bg-black min-h-screen p-2">
       {/* Banner Section */}
-      <div className="relative rounded-3xl overflow-hidden w-full h-[300px] max-w-[1400px] mx-auto my-10 shadow-xl bg-[#111]">
+      <div className="relative rounded-3xl overflow-hidden w-full max-w-[1100px] mx-auto my-10 shadow-xl bg-[#111]">
         <img
           src={bannerImg}
           alt="Spark Tech Banner"
@@ -124,7 +122,7 @@ const About = () => {
     </div>
 
     {/* Paragraph intro */}
-    <p className="text-gray-400 mb-30 text-2xl ">
+    <p className="text-gray-400 mb-12 max-w-4xl text-3xl">
       At Spark Tech, our leadership is driven by a passion for innovation and a deep understanding of digital transformation. Our founder leads by example, constantly pushing the boundaries to help clients thrive in a fast-evolving tech landscape.
     </p>
 
@@ -136,9 +134,9 @@ const About = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-orange-500 rounded-t-full z-0" />
         {/* Leader image */}
         <img
-          src="/member3.png"
+          src="/leader.jpg"
           alt="Leader"
-          className="absolute top-[-83.5px]   rounded-t-full grayscale  border-orange-500"
+          className="relative z-10 w-full h-full object-cover rounded-t-full grayscale border-t-[8px] border-orange-500"
         />
         {/* Name overlay */}
         <div className="absolute bottom-[-30px] left-0 w-full text-center z-20">
@@ -156,114 +154,46 @@ const About = () => {
 </div>
 
       {/* Our Team Section */}
-      {/* Our Team Section */}
-<div className="bg-black py-20 px-4">
-  <div className="max-w-6xl mx-auto text-center">
-    <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 mb-4">
-            <span
-              className="text-[#F58327] text-xs font-black uppercase tracking-wide"
-              style={{ fontFamily: "Inter" }}
-            >
-              TEAM MEMBERS
-            </span>
-          </div>
-    <h2 className="text-4xl font-bold text-white mb-12">Say Hello to Our Team</h2>
-    
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      {[
-        {
-          name: "Aishwarya Rai",
-          role: "UI/UX Designer",
-          image: "/member1.png",
-          instagram: "https://instagram.com/your_profile_1",
-    linkedin: "https://linkedin.com/in/your_profile_1",
-        },
-        {
-          name: "Arjun Kapoor",
-          role: "Frontend Developer",
-          image: "/member3.png",
-          instagram: "https://instagram.com/your_profile_1",
-          linkedin: "https://linkedin.com/in/your_profile_1",
-        },
-        {
-          name: "Priya Singh",
-          role: "Project Manager",
-          image: "/member1.png",
-          instagram: "https://instagram.com/your_profile_1",
-          linkedin: "https://linkedin.com/in/your_profile_1",
-        },
-      ].map((member, i) => {
-        const [clicked, setClicked] = useState(false); // Local click state per card
-
-        return (
-          <div
-            key={i}
-            className="relative group bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-xl transition-all duration-300"
-          >
-            {/* Orange semi-circle animation */}
-            <div
-              className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-150 h-150 bg-orange-500 rounded-full z-0 transition-all duration-700 ${
-                clickedIndex === i ? "-translate-y-16" : "translate-y-full"
-              }`}
-            />
-
-            {/* Member Image */}
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-50 h-90  mx-auto mt-6 z-10 relative transition-transform duration-500 group-hover:scale-105"
-            />
-
-            {/* Name & Role */}
-            <div className="relative z-10 transition-all duration-300 group-hover:-translate-y-1 text-white text-center mt-4 mb-2">
-              <h4 className="text-xl font-semibold">{member.name}</h4>
-              <p className="text-orange-400">{member.role}</p>
-            </div>
-
-             {/* Social Buttons */}
-    <div className="relative mt-4 z-20">
-      <a
-        href={member.instagram}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`absolute bottom-14 left-3 w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center
-        transition-all duration-500 ${
-          clickedIndex === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-        }`}
-      >
-        <FaInstagram size={16} />
-      </a>
-
-      <a
-        href={member.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`absolute bottom-24 left-3 w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center
-        transition-all duration-500 delay-100 ${
-          clickedIndex === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-        }`}
-      >
-        <FaLinkedinIn size={16} />
-      </a>
-
-            {/* Plus Button */}
-            <button
-              onClick={() => setClickedIndex(clickedIndex === i ? null : i)}
-              className="absolute bottom-3 right-3 z-20 p-2 bg-white text-black rounded-full hover:scale-110 transition"
-            >
-              +
-            </button>
+      <div className="bg-black py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-12">Our Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+            {[
+              {
+                name: "Aishwarya Rai",
+                role: "UI/UX Designer",
+                image: "/member1.png",
+              },
+              {
+                name: "Arjun Kapoor",
+                role: "Frontend Developer",
+                image: "/member2.jpg",
+              },
+              {
+                name: "Priya Singh",
+                role: "Project Manager",
+                image: "/member3.png",
+              },
+            ].map((member, i) => (
+              <div
+                key={i}
+                className="bg-[#1a1a1a] rounded-2xl p-6 text-center shadow-lg hover:shadow-orange-400/30 transition duration-300"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-orange-400"
+                />
+                <h4 className="text-xl font-semibold text-white">
+                  {member.name}
+                </h4>
+                <p className="text-orange-400">{member.role}</p>
+              </div>
+            ))}
           </div>
-          </div>
-        );
-      })}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-
-          </div>
-        
   );
 };
 

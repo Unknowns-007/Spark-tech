@@ -8,6 +8,7 @@ import Blogs from './components/Blogs';
 import ProjectsSection from './components/ProjectsSection';
 import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
+import Faq from './components/Faq';
 
 const Home = () => (
   <>
@@ -17,11 +18,15 @@ const Home = () => (
     <div id="services">
       <Services />
     </div>
-    <div id="footer">
-      <Footer />
+    <div>
+      <Faq/>
     </div>
     <div id="contact">
       <ContactForm />
+    </div>
+    
+    <div id="footer">
+      <Footer />
     </div>
   </>
 );
