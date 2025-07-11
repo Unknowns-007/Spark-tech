@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-
+import Seo from './Seo';
 const ProjectsSection = () => {
   const containerRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
@@ -53,6 +53,11 @@ const ProjectsSection = () => {
   }, []);
 
   return (
+    <>
+      <Seo
+        title="Projects | Spark Tech Digital"
+        description="Explore our recent digital marketing, branding, and web development projects delivered to satisfied clients."
+      />
     <div
   ref={containerRef}
   className="h-screen w-screen overflow-y-scroll overflow-x-hidden bg-black text-white font-[Inter] relative pt-28"
@@ -113,6 +118,7 @@ const ProjectsSection = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

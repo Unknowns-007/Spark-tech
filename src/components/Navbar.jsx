@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import { scroller, animateScroll as scroll } from 'react-scroll';
+import Logo from '../assets/Logo.png';
+import { Link } from 'react-router-dom';
+
 
 export const Navbar = () => {
   const [active, setActive] = useState('home');
@@ -68,7 +71,7 @@ const menuItems = [...baseMenuItems, { name: 'contact', type: 'scroll', id: 'con
   };
 
   return (
-    <div className='w-full h-[80px] fixed top-0 z-50 font-[Inter]'>
+    <div className='w-full h-[80px] fixed top-0 z-50 font-[Inter] '>
       {/* Desktop Capsule Navbar */}
       <div className='hidden md:flex justify-center'>
         <div className='h-[60px] w-[650px] border border-[#c8c8c8] rounded-4xl bg-black flex items-center mt-5'>
@@ -105,7 +108,12 @@ const menuItems = [...baseMenuItems, { name: 'contact', type: 'scroll', id: 'con
 
       {/* Mobile Navbar Header */}
       <div className='md:hidden flex justify-between items-center px-5 h-full'>
-        <div className='text-white text-lg font-bold'>Spark Tech</div>
+        <Link to="/">
+      <div className="w-[50px] h-[50px] cursor-pointer">
+        <img src={Logo} alt="Logo" className="w-full h-full object-contain" />
+      </div>
+    </Link>
+
         <button
           className='text-white text-2xl'
           onClick={() => setMenuOpen(!menuOpen)}

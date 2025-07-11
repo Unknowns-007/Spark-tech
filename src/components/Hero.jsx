@@ -20,14 +20,33 @@ const Hero = () => {
 </button>
       </div>
     </section>
-<div className="relative">
+<div className="relative w-full overflow-hidden">
+  {/* Hero Image with fadeInZoom */}
   <img
     src={Photo}
     alt="Hero"
-    className="w-full h-[300px] md:h-auto object-cover"
+    className="w-full h-[300px] md:h-[600px] object-cover fade-in-zoom"
   />
-  <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/80 to-transparent"></div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center p-4 md:p-8">
+    <div className="text-[#ffffff]">
+      <marquee behavior="" direction=""><h1 className="text-4xl md:text-6xl  mb-4 slide-up font-medium font" style={{fontFamily: 'unbounded,sans-serif' }}>
+        WELCOME TO SPARK TECH
+      </h1></marquee>
+      
+      <p className="text-sm md:text-lg mb-6 slide-up">
+        Discover our services and get started today!
+      </p>
+      <button className="bg-[#9a2e00] hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-xl shadow-lg animate-bounce mt-2">
+        Get Started
+      </button>
+    </div>
+  </div>
 </div>
+
+
+  <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/80 to-transparent"></div>
 
     </>
     

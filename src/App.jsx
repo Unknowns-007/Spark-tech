@@ -10,8 +10,7 @@ import BlogsPage from "./components/BlogsPage";
 import ProjectsSection from "./components/ProjectsSection";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
-import faq, { Faq } from "./components/Faq"
-
+import { Faq } from "./components/Faq";
 const Home = () => (
   <>
     <div id="home">

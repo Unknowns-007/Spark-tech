@@ -1,4 +1,5 @@
 import React from 'react';
+import Seo from './Seo';
 import {
   FaInstagram,
   FaPenNib,
@@ -75,6 +76,11 @@ const Services = () => {
   });
 
   return (
+    <>
+    <Seo
+        title="Services | Spark Tech Digital"
+        description="Explore our recent digital marketing, branding, and web development projects delivered to satisfied clients."
+      />
     <section className="bg-black text-white py-16 px-6">
       <div>
         <span
@@ -111,6 +117,7 @@ const Services = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

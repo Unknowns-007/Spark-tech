@@ -1,6 +1,8 @@
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useState } from "react";
 import bannerImg from "../assets/banner.jpg"; // your banner image
+import { Helmet } from 'react-helmet';
+import Seo from "./Seo";
 
 const About = () => {
   const [isMissionOpen, setIsMissionOpen] = useState(false);
@@ -8,6 +10,12 @@ const About = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
 
   return (
+    <>
+     <Seo
+        title="About | Spark Tech Digital"
+        description="Explore our recent digital marketing, branding, and web development projects delivered to satisfied clients."
+      />
+    
     <div className="bg-black min-h-screen p-2">
       {/* Banner Section */}
       <div className="relative rounded-3xl overflow-hidden w-full h-[300px] max-w-[1400px] mx-auto my-10 shadow-xl bg-[#111]">
@@ -263,6 +271,7 @@ const About = () => {
 
 
           </div>
+          </>
         
   );
 };

@@ -1,14 +1,15 @@
 import React from "react";
 import Blogs from "./Blogs";
-import Footer from "./Footer";
+import Seo from "./Seo";
 
 const BlogsPage = () => {
   return (
     <>
+    <Seo
+        title="Blogs | Spark Tech Digital"
+        description="Explore our recent digital marketing, branding, and web development projects delivered to satisfied clients."
+      />
       <Blogs />
-      <div id="footer">
-        <Footer />
-      </div>
     </>
   );
 };
