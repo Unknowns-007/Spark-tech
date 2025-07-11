@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -149,22 +150,32 @@ export const Footer = () => {
                     Menu
                   </h3>
                   <ul className="space-y-3">
-                    {["Home", "Services", "Projects", "Contact"].map(
-                      (item, i) => (
-                        <li key={i}>
-                          <button
-                            onClick={() => scrollToSection(item.toLowerCase())}
-                            className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors text-left"
-                            style={{
-                              fontFamily:
-                                'Satoshi, "Satoshi Placeholder", sans-serif',
-                            }}
-                          >
-                            {item}
-                          </button>
-                        </li>
-                      ),
-                    )}
+                    {["Home", "Services", "Contact"].map((item, i) => (
+                      <li key={i}>
+                        <button
+                          onClick={() => scrollToSection(item.toLowerCase())}
+                          className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors text-left"
+                          style={{
+                            fontFamily:
+                              'Satoshi, "Satoshi Placeholder", sans-serif',
+                          }}
+                        >
+                          {item}
+                        </button>
+                      </li>
+                    ))}
+                    <li>
+                      <Link
+                        to="/projects"
+                        className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors"
+                        style={{
+                          fontFamily:
+                            'Satoshi, "Satoshi Placeholder", sans-serif',
+                        }}
+                      >
+                        Projects
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 
@@ -208,20 +219,42 @@ export const Footer = () => {
                     Other Pages
                   </h3>
                   <ul className="space-y-3">
-                    {["Review", "About", "Internship"].map((item, i) => (
-                      <li key={i}>
-                        <a
-                          href="#"
-                          className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors"
-                          style={{
-                            fontFamily:
-                              'Satoshi, "Satoshi Placeholder", sans-serif',
-                          }}
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
+                    <li>
+                      <Link
+                        to="/blogs"
+                        className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors"
+                        style={{
+                          fontFamily:
+                            'Satoshi, "Satoshi Placeholder", sans-serif',
+                        }}
+                      >
+                        Review
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/about"
+                        className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors"
+                        style={{
+                          fontFamily:
+                            'Satoshi, "Satoshi Placeholder", sans-serif',
+                        }}
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-white/80 text-base font-normal hover:text-[#F58327] transition-colors"
+                        style={{
+                          fontFamily:
+                            'Satoshi, "Satoshi Placeholder", sans-serif',
+                        }}
+                      >
+                        Internship
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
