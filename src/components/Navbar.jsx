@@ -16,6 +16,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     setMenuOpen(false); // Close mobile menu when route changes
+    // okay but why not adding dynamic appbar??
   }, [location.pathname]);
 
   const baseMenuItems = [
