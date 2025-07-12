@@ -40,7 +40,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<ProjectsSection />} />
         <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/blog/:id" element={<BlogDetail />} /> // add Dynamic route for blog details
       </Routes>
     </div>
   );
