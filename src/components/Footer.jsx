@@ -10,6 +10,7 @@ export const Footer = () => {
 
     if (sectionId === "projects") {
       // For sections that don't exist yet, scroll to services as fallback
+      //nice comment bro
       const element = document.getElementById("services");
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
