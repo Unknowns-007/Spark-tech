@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 const BlogDetail = () => {
   const { id } = useParams();
 
-  // Blog data - this would typically come from an API or database
   const blogData = {
     1: {
       title:
@@ -16,11 +15,11 @@ const BlogDetail = () => {
     },
   };
 
-  const blog = blogData[id] || blogData[1]; // Default to first blog
+  const blog = blogData[id] || blogData[1]; // use dynamic id
 
   return (
     <div className="w-full min-h-screen bg-[#0A0A0A] text-white">
-      {/* Hero Section - Fixed margins to prevent overflow */}
+      {/* Hero Section */}
       <div className="px-4 lg:px-10 pt-20">
         <section className="relative w-full h-[500px] md:h-[700px] lg:h-[823px] max-w-[1440px] mx-auto rounded-[40px] overflow-hidden">
           {/* Background Image */}
